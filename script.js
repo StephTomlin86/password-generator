@@ -1,61 +1,86 @@
-/ Assignment Code
-var generateBtn = document.querySelector("#generate");
+// Assignment Code
+//var generateBtn = document.querySelector("#generate");
 let passowrd = "";
+
 //Password Length
 
   var passLength = prompt("How many characters would you like in your password?" );
 if (passLength < "8" && passLength > "128") {
     alert("Password length must be between 8 and 128 characters");
-} else {
+}  
 
+while (passLength < "8" && passLength> "128") {
+    var passLength = prompt("How many characters would you like in your password?");
 }
 //Password Criteria Arrays
-function getRandomLowers (){
-    const randomLowers = "abcdefghijklmnopqrstuvwxyz";     
+const randomLowers = "abcdefghijklmnopqrstuvwxyz"; 
+var lowers = "abcdefghijklmnopqrstuvwxyz".split("");
+let criteriaArray = []    
+if (confirm("Would you lkike your password to include lowercase letters?")) {
+    alert("Your password will include lowercase letters");
+    criteriaArray.push(lowers);
+} else {
+ alert ("Your passwork will NOT include lowercase letters")
 }
-function getRandomUppers (){
-    const randomUppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const randomUppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var uppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+let criteriaArray = []
+if (confirm("Would you like your password to include uppercase letters?")) {
+    alert("Your password will include uppercase letters");
+    criteriaArray.push(randomUppers);
+} else {
+    alert("Your password will NOT include uppercase letters")
 }
-function getRandomNumbers (){
-    const randomNumbers = "0123456789";
+const randomNumbers = [0123456789];
+if (confirm("Would you like your password to include numbers?")) {
+    alert("Your passwrod will include numbers");
+    criteriaArray.push(randomNumbers);
+} else {
+    alert ("Your password will NOT include numbers")
 }
-function getRandomSymbols (){
-    const randomSymbols = "!@#$%^&*()";        
-}
+const randomSymbols = "!@#$%^&*()";   
+var symbols = "!@#$%^&*()".split("");
+let criteriaArray = []   
+if (confirm("Would you like your password to include symbols?")) {
+    alert("Your password will include symbols");
+    criteriaArray.push(randomSymbols);
+} else {
+    alert ("Your password will NOT include symbols")
+} 
 //Password Criteria Confirms
 function myFunction() {
     if (confirm ("Would you like your password to include lowercase letters?" )){
-        begin 
+        
         alert ("Your password will include lowercase letters");
         criteriaArray.push (randomLowers);     
-        end
+        
     } else {
         alert ("Your password will NOT include lowercase letters")
     }
 function myFunction() {
     if (confirm ("Would you like your password to include uppercase letters?" )){
-        begin 
+        
         alert ("Your password will include uppercase letters");
         criteriaArray.push (randomUppers);     
-        end
+        
     } else {
         alert ("Your password will NOT include uppercase letters")
     }
 function myFunction() {
     if (confirm ("Would you like your password to include numbers?" )){
-        begin 
+         
         alert ("Your password will include numbers");
         criteriaArray.push (randomNumbers);     
-        end
+        
     } else {
         alert ("Your password will NOT include numbers")
     }
 function myFunction() {
     if (confirm ("Would you like your password to include symbols?" )){
-        begin 
+         
         alert ("Your password will include symbols");
         criteriaArray.push (randomSymbols);     
-        end
+        
     } else {
         alert ("Your password will NOT include symbols")
     }
